@@ -8,3 +8,4 @@ werkzeug
 pysendpulse
 pymongo
 rq
+dnspython
