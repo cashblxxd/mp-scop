@@ -1,0 +1,10 @@
+pypdf2
+python-dateutil
+gunicorn
+flask_wtf
+requests
+flask
+werkzeug
+pysendpulse
+pymongo
+rq
