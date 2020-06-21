@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Вход</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -15,8 +15,8 @@
         src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
         integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
         crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
 </head>
 <body>
     
@@ -190,7 +190,7 @@
         <div class="accounts__main-table-text">
             A-1010
         </div>
-        <img src="img/photo_2020-05-27_23-29-46.jpg" alt="" class="accounts__main-table-img">
+        <img src="{{ url_for('static', filename='img/photo_2020-05-27_23-29-46.jpg') }}/" alt="" class="accounts__main-table-img">
         <div class="accounts__main-table-text">
             очень дорогая вешь
         </div>
@@ -217,7 +217,7 @@
         <div class="accounts__main-table-text">
             A-1010
         </div>
-        <img src="img/photo_2020-05-27_23-29-46.jpg" alt="" class="accounts__main-table-img">
+        <img src="{{ url_for('static', filename='img/photo_2020-05-27_23-29-46.jpg') }}/" alt="" class="accounts__main-table-img">
         <div class="accounts__main-table-text">
             очень дорогая вешь
         </div>
@@ -243,7 +243,7 @@
         <div class="accounts__main-table-text">
             A-1010
         </div>
-        <img src="img/photo_2020-05-27_23-29-46.jpg" alt="" class="accounts__main-table-img">
+        <img src="{{ url_for('static', filename='img/photo_2020-05-27_23-29-46.jpg') }}/" alt="" class="accounts__main-table-img">
         <div class="accounts__main-table-text">
             очень дорогая вешь
         </div>
@@ -268,7 +268,7 @@
         <div class="accounts__main-table-text">
             A-1010
         </div>
-        <img src="img/photo_2020-05-27_23-29-46.jpg" alt="" class="accounts__main-table-img">
+        <img src="{{ url_for('static', filename='img/photo_2020-05-27_23-29-46.jpg') }}/" alt="" class="accounts__main-table-img">
         <div class="accounts__main-table-text">
             очень дорогая вешь
         </div>

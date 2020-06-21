@@ -1,5 +1,5 @@
 from flask import *
-from mongo import user_exist, username_taken, get_data, put_confirmation_token, get_confirmation_token
+from mongo import user_exist, username_taken, get_data, put_confirmation_token, get_confirmation_token, user_create
 from mailer import send_join_mail
 
 
@@ -18,18 +18,20 @@ def dashboard():
 @app.route('/confirm/<string:token>', methods=['GET', 'POST'])
 def confirm_join(token):
     response, message = get_confirmation_token(token)
+    print(response, message)
     if response:
-        username = message
-        if "users" not in session:
-            session["users"] = {}
-        session["users"][username] = {
-            "username": username
-        }
-        if "order" not in session["users"]:
-            session["users"]["order"] = []
-        session["users"]["order"].append(username)
-        return redirect("/")
-    return render_template("login.html", success=True)
+        username, password = message
+        response, data = user_create(username, password)
+        if response:
+            if "users" not in session:
+                session["users"] = {}
+            session["users"][username] = data
+            if "order" not in session["users"]:
+                session["users"]["order"] = []
+            session["users"]["order"].append(username)
+            print(session["users"])
+            return redirect("/")
+    return render_template("login.html")
 
 
 @app.route('/logout', methods=['GET', 'POST'])
@@ -47,9 +49,16 @@ def login():
         if username and password:
             print("there")
             if user_exist(username, password):
-                print("yeah")
-                session["users"] = [get_data(username)]
-                return redirect("/dashboard")
+                if "users" not in session:
+                    session["users"] = {}
+                session["users"][username] = {
+                    "username": username
+                }
+                if "order" not in session["users"]:
+                    session["users"]["order"] = []
+                session["users"]["order"].append(username)
+                print(session["users"])
+                return redirect("/")
             else:
                 print("nope")
                 return render_template("login.html", attempt=True)
