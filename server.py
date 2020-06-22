@@ -15,22 +15,24 @@ def dashboard():
     return render_template("accounts-1.html")
 
 
-@app.route('/confirm/<string:token>', methods=['GET', 'POST'])
-def confirm_join(token):
-    response, message = get_confirmation_token(token)
-    print(response, message)
-    if response:
-        username, password = message
-        response, data = user_create(username, password)
+@app.route('/confirm', methods=['GET', 'POST'])
+def confirm_join():
+    token = request.args.get("token", "")
+    if token:
+        response, message = get_confirmation_token(token)
+        print(response, message)
         if response:
-            if "users" not in session:
-                session["users"] = {}
-            session["users"][username] = data
-            if "order" not in session["users"]:
-                session["users"]["order"] = []
-            session["users"]["order"].append(username)
-            print(session["users"])
-            return redirect("/")
+            username, password = message
+            response, data = user_create(username, password)
+            if response:
+                if "users" not in session:
+                    session["users"] = {}
+                session["users"][username] = data
+                if "order" not in session["users"]:
+                    session["users"]["order"] = []
+                session["users"]["order"].append(username)
+                print(session["users"])
+                return redirect("/")
     return render_template("login.html")
 
 
