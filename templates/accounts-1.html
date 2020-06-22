@@ -34,7 +34,7 @@
              
             </button>
         </form>
-        <h1 class="accounts__header-heading">Аккаунт 1</h1>
+        <h1 class="accounts__header-heading">{{ username }}</h1>
 
         <div class="accounts__header-links-box">
             <a href="#" class="accounts__header-links"><i class="far fa-question-circle accounts__header-links-icon"></i></a>
@@ -42,83 +42,82 @@
             <a href="#" class="accounts__header-links"><i class="far fa-user-circle accounts__header-links-icon"></i></a>
         </div>
     </div>
-
-    <div class="accounts__menu" id="account-1">
-        <ul class="accounts__menu-list">
-        <h1 class="accounts__menu-heading" id="account-1-close"><i class="fas fa-user-minus"></i> Аккаунт 1</h1>
-            <a href="#" class="accounts__menu-item accounts__menu-item-active">
-                <i class="fas fa-calendar-alt">&nbsp;&nbsp;</i> Ozon.Seller
-                <div class="accounts__menu-item-hover accounts__menu-item-hover-active">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="far fa-chart-bar"></i>&nbsp;&nbsp;</i> Динамика
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-chart-line">&nbsp;&nbsp;</i> Продажи
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-chart-pie"></i>&nbsp;&nbsp;</i> Анализ
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-cart-plus"></i>&nbsp;&nbsp;</i> Закупка
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-chart-area"></i>&nbsp;&nbsp;</i> Потери
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;</i> Карта
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-people-carry"></i>&nbsp;&nbsp;</i> Движение
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-id-card"></i>&nbsp;&nbsp;</i> Конкуренты
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-coins"></i>&nbsp;&nbsp;</i> Средства
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-            <a href="#" class="accounts__menu-item">
-                <i class="fas fa-cog"></i>&nbsp;&nbsp;</i> Настройки
-                <div class="accounts__menu-item-hover">&nbsp;</div>
-            </a>
-        </ul>
-        
-    </div>
+    {% for i in range(1, accounts|length + 1) %}
+        <div class="accounts__menu" id="account-{{ i }}">
+            <ul class="accounts__menu-list">
+            <h1 class="accounts__menu-heading" id="account-{{ i }}-close"><i class="fas fa-user-minus"></i>{{ accounts[i - 1] }}</h1>
+                <a href="#" class="accounts__menu-item accounts__menu-item-active">
+                    <i class="fas fa-calendar-alt">&nbsp;&nbsp;</i> MP-Scop
+                    <div class="accounts__menu-item-hover accounts__menu-item-hover-active">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="far fa-chart-bar"></i>&nbsp;&nbsp;</i> Динамика
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-chart-line">&nbsp;&nbsp;</i> Продажи
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-chart-pie"></i>&nbsp;&nbsp;</i> Анализ
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-cart-plus"></i>&nbsp;&nbsp;</i> Закупка
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-chart-area"></i>&nbsp;&nbsp;</i> Потери
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-map-marked-alt"></i>&nbsp;&nbsp;</i> Карта
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-people-carry"></i>&nbsp;&nbsp;</i> Движение
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-id-card"></i>&nbsp;&nbsp;</i> Конкуренты
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-coins"></i>&nbsp;&nbsp;</i> Средства
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+                <a href="#" class="accounts__menu-item">
+                    <i class="fas fa-cog"></i>&nbsp;&nbsp;</i> Настройки
+                    <div class="accounts__menu-item-hover">&nbsp;</div>
+                </a>
+            </ul>
+        </div>
+    {% endfor %}
 
     
     <div class="accounts__menu-2">
         <ul class="accounts__menu-list">
-          
-                <h1 class="accounts__menu-heading-2" id="account-1-click"><i class="fas fa-user-plus"></i> Аккаунт 1</h1>
-
-
-                <h1 class="accounts__menu-heading-2" id="account-2-click"><i class="fas fa-user-plus"></i> Аккаунт 2</h1>
-           
+            {% for i in range(1, accounts|length + 1) %}
+                <h1 class="accounts__menu-heading-2" id="account-{{ i }}-click"><i class="fas fa-user-plus"></i>{{ accounts[i - 1] }}</h1>
+            {% endfor %}
             
             </ul>
     </div>  
     <div class="accounts__menu-3">
         <ul class="accounts__menu-list">
+            {% for i in range(1, accounts|length + 1) %}
+                {% if i == cur_pos %}
+                    <h1 class="accounts__menu-heading-2 accounts__menu-heading-3" id="account-{{ i }}-open">
+                        <div class="accounts__menu-3-select">&nbsp;</div>
 
-                
-                <h1 class="accounts__menu-heading-2 accounts__menu-heading-3" id="account-1-open">
-                    <div class="accounts__menu-3-select">&nbsp;</div>
-
-                    <i class="fas fa-user-plus"></i> 1</h1>
+                        <i class="fas fa-user-plus"></i> {{ i }}</h1>
+                {% else %}
+                    <h1 class="accounts__menu-heading-2" id="account-{{ i }}-click">
 
 
-                <h1 class="accounts__menu-heading-2" id="account-2-click"><i class="fas fa-user-plus"></i> 2</h1>
-           
-            
+                        <i class="fas fa-user-plus"></i> {{ i }}</h1>
+                {% endif %}
+            {% endfor %}
             </ul>
     </div>  
     <div class="accounts__main"></div> 
@@ -311,10 +310,11 @@
     <p class="accounts__storage__heading">На моём складе</p>
 </div>
 
+{% for i in range(1, accounts|length + 1) %}
 <script>
-        $("#account-1-click").click(function(){
+        $("#account-{{ i }}-click").click(function(){
        
-       $("#account-1").css({
+       $("#account-{{ i }}").css({
            "visibility":"visible",
          }).animate({
            "height":"467px",
@@ -323,23 +323,16 @@
    })
 
 
-   $("#account-1-close").click(function(){
+   $("#account-{{ i }}-close").click(function(){
       
-       $("#account-1").animate({
+       $("#account-{{ i }}").animate({
            "height":"0",
        },600,'easeInOutQuint').queue(function (next) { 
     $(this).css('visibility', 'hidden'); 
     next(); 
   });
     })
-      
-
-  
-
-
-
-
 </script>
-
+{% endfor %}
 </body>
 </html>
