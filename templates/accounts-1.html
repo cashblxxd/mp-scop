@@ -24,7 +24,7 @@
     <div class="accounts__header">
         
 
-        <form action="#"method="">
+        <form action="#" method="">
             <button class="accounts__header-search__button">
               
                     <i class="fas fa-search accounts__header-search__icon"></i>
@@ -100,8 +100,10 @@
             {% for i in range(1, accounts|length + 1) %}
                 <h1 class="accounts__menu-heading-2" id="account-{{ i }}-click"><i class="fas fa-user-plus"></i>{{ accounts[i - 1] }}</h1>
             {% endfor %}
-            
-            </ul>
+               
+            <a href="" class="accounts__menu-heading-2-link"><h1 class="accounts__menu-heading-2" id="account-2-click"><i class="fas fa-user-plus"></i>Добавить аккаунт</h1></a>
+            </ul>        
+             
     </div>  
     <div class="accounts__menu-3">
         <ul class="accounts__menu-list">
@@ -118,6 +120,8 @@
                         <i class="fas fa-user-plus"></i> {{ i }}</h1>
                 {% endif %}
             {% endfor %}
+            
+            <h1 class="accounts__menu-heading-2" id="account-2-click"><i class="fas fa-user-plus"></i></h1>
             </ul>
     </div>  
     <div class="accounts__main"></div> 
@@ -320,19 +324,25 @@
            "height":"467px",
            "opacity": "1"
        },600,'easeInOutQuint')
+
+       $("#current-page-hover").addClass("accounts__menu-item-hover-active")
+       $("#current-page").addClass("accounts__menu-item-active")
    })
 
 
    $("#account-{{ i }}-close").click(function(){
       
-       $("#account-{{ i }}").animate({
-           "height":"0",
-       },600,'easeInOutQuint').queue(function (next) { 
-    $(this).css('visibility', 'hidden'); 
-    next(); 
-  });
+       $("#account-{{ i }}").css({
+          "visibility":"hidden",
+        }).animate({"opacity": "0"},600);
+        $(".accounts__menu-item-hover .accounts__menu-item-hover-hover").css({
+          "visibility":"hidden",
+        }).animate({"opacity": "0"},600);
+        $("#current-page-hover").removeClass("accounts__menu-item-hover-active")
+       $("#current-page").removeClass("accounts__menu-item-active")
     })
 </script>
 {% endfor %}
+</div>
 </body>
 </html>

@@ -422,6 +422,8 @@ body {
         line-height: 20px;
         text-align: center;
         position: relative; }
+        .accounts__menu-heading-2-link {
+          text-decoration: none !important; }
       .accounts__menu-heading-3 {
         transition: all .3s ease-in-out !important; }
         .accounts__menu-heading-3:hover {
