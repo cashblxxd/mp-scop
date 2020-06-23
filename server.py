@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = 'secret_key'
 def dashboard():
     if 'users' not in session or len(session["users"]) == 0:
         return redirect("/login")
-    return render_template("accounts-1.html", username="User 1", accounts=["ivanpush27@gmail.com", "hbr.tip@gmail.com", "admin@ya.ru"])
+    return render_template("accounts-12.html", username="User 1", accounts=["ivanpush27@gmail.com", "hbr.tip@gmail.com", "admin@ya.ru"])
 
 
 @app.route('/confirm', methods=['GET', 'POST'])

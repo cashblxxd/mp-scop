@@ -318,9 +318,9 @@ body {
       color: var(--color-first); }
   .accounts__menu {
     position: absolute;
-    width: 202px;
+    width: 300px;
     height: 0;
-    left: 87px;
+    left: -13px;
     opacity: 0;
     display: block;
     visibility: hidden;
@@ -330,9 +330,9 @@ body {
     border-radius: 20px; }
     .accounts__menu-2 {
       position: absolute;
-      width: 500px;
+      width: 300px !important;
       height: 856px;
-      left: 87px;
+      left: -13px;
       top: 201px;
       visibility: hidden;
       opacity: 0;
@@ -371,7 +371,7 @@ body {
       text-align: left;
       text-decoration: none;
       display: block;
-      margin-left: 4rem;
+      margin-left: 8.5rem;
       position: relative;
       margin-top: 1.7rem;
       transition: all .3s ease-in-out;
@@ -387,7 +387,7 @@ body {
         content: "";
         position: absolute;
         top: -55%;
-        left: -15%;
+        left: -10%;
         background: #ffffff;
         border-radius: 51px;
         transition: all .3s ease-in-out; }
