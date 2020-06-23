@@ -58,6 +58,7 @@ def get_confirmation_token(token):
         return False, 'Not found'
     username, password = data["username"], data["password"]
     client.users.confirmation_tokens.delete_one(data)
+
     return True, (username, password)
 '''
 def
