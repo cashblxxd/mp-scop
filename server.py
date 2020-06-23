@@ -6,7 +6,6 @@ from mailer import send_join_mail
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'
 
-
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
